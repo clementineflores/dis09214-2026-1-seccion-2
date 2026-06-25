@@ -5,260 +5,417 @@
 
 ### Descripción objetiva
 #### ¿Qué es el proyecto?
-Nuestro proyecto representa en cómo en la actualidad y durante siglos, la supremacía del hombre (cis-hetero-opresores) ante las personas no hombres (mujeres, lesbianas, trans, no binares, etc).
+Nuestro proyecto habla de la supremacía del hombre cis-hetero sobre las personas no hombres —mujeres, lesbianas, trans, no binaries, entre otras— es una estructura que lleva siglos operando, y que aún hoy se traduce en incomodidad, miedo e inseguridad cotidiana. Desde esa realidad que habitamos, surge casi como un acto de supervivencia la posibilidad de imaginar otra, un mundo sin esa presencia opresora, donde por un momento respirar, aliviarse, existir sin el peso constante de esa mirada.
 
 #### ¿Qué se ve en pantalla?
-Se ve la opresión, la incomodidad y la inseguridad que han causado y siguen causando los hombres cis-hetero/opresores a toda persona no hombre, y también se muestra un mundo ideal en el que no existe esta opresión y florece la libertad como un lugar seguro en donde puedes ser tu mismx. 
-¿Qué elementos visuales aparecen?
-*  Figuras geométricas representadas como las personas no hombres (mujeres, lesbianas, trans, no binaries, etc)
+En la pantalla se despliega una dualidad —o más bien, una transición— entre dos realidades que han coexistido siempre, la del hombre hetero cis y la de las personas no hombres. El primer estado aparece apagado, frío, plano. Es el punto de partida. Al presionar ENTER, algo se rompe y se transforma en un trance, un umbral. Lo que emerge es una frase que Violeta Parra pronunció en una entrevista: "Soy una hormiguita que busca bajo la tierra dónde refugiar su corazón". Las personas no hombres somos esas hormiguitas —pequeñas no por naturaleza, sino porque así se nos ha intentado hacer sentir, constantemente, por una cultura que nos reduce y nos estrecha—.
+Pero la hormiga también busca. Y esa búsqueda —bajo la tierra, dónde refugiar su corazón— habla de el impulso de encontrar refugio entre nosotrxs, entre otras personas no hombres, de ser entendidxs, escuchadxs y amadxs de una manera genuina y sin condiciones ni patriarcado de por medio, a lo que al presionar ENTER otra vez, se comienza a escuchar 
+
+#### ¿Qué elementos visuales aparecen?
+*  Figuras geométricas representadas como las personas no hombres (mujeres, lesbianas, trans, no binaries, etc) y los hombres hetero cis.
 *  Símbolo de hombre (supremacía cis-hetero)
 *  Frase dicha por Violeta Parra "Soy una hormiguita que busca bajo la tierra dónde poder refugiar su corazón", asociando "hormigas" como esta minoría no hombre.
 *  Una imagen de un símbolo masculino y otra imagen de un lirio florecido.
 
 #### Descripción conceptual
-Nuestra idea central del proyecto y la relación con nuestro sistema diseñado, es demostrar la realidad actual y no actual, de cómo las personas no hombres son oprimidas. Nuestra regla de oro en el proyecto funciona de esta manera: Mientras el mouse esté presionado, persiste la supremacía y opresión, pero al soltarlo, las personas no hombres pueden florecer libremente en este mundo ideal, o conviviendo con las mismas personas no hombres. La lógica con nuestra problemática se relaciona directamente en representación desde nosotras, como personas no hombres oprimidas por la supremacía diariamente, en cómo nosotras lo hemos vivido, y en que sabemos cómo puede ser vivenciarlo desde primera fuente. 
+Nuestra idea central del proyecto es demostrar la realidad actual y no actual, de cómo las personas no hombres son oprimidas. Nuestra regla de oro en el proyecto funciona de esta manera: Mientras el mouse esté presionado, persiste la supremacía y opresión, pero al soltarlo, las personas no hombres pueden florecer libremente en este mundo ideal, o conviviendo con las mismas personas no hombres. La lógica con nuestra problemática se relaciona directamente en representación desde nosotras, como personas no hombres oprimidas por la supremacía diariamente, en cómo nosotras lo hemos vivido, y en que sabemos cómo puede ser vivenciarlo desde primera fuente. 
 
 #### Input / Output y sistema
-¿Qué datos entran? (INPUT)
-*  La posición del mouse (mouseX y mouseY), que determina dónde aparece el símbolo masculino.
-*  La acción de presionar o soltar el mouse (mousePressed() y mouseReleased()), que cambia el estado de la variable opresion.
-*  Las imágenes cargadas al inicio (simbolo masculino.png y fondo.jpeg).
-*  Los valores aleatorios generados para cada figura, como su posición inicial, tamaño, velocidad, tipo y color.
+* **Inputs:**
+
+* `mouseX`, `mouseY` → posición del mouse.
+* `keyPressed`, `key`, `keyCode`, `ENTER`, `" "` → entrada del teclado (Enter y barra espaciadora).
+* `windowWidth`, `windowHeight`, `windowResized()` → tamaño y cambios de la ventana.
+* `loadImage()`, `loadFont()`, `loadSound()` → archivos externos cargados (imágenes, fuente y audio).
+* `random()` → generación de valores aleatorios para posición, tamaño, velocidad, color y tipo de figura.
+
+**Outputs:**
+
+* `ellipse()`, `rect()`, `triangle()`, `line()` → figuras dibujadas en pantalla.
+* `image()` → imágenes mostradas (símbolo masculino y fondo).
+* `text()` → texto e instrucciones en pantalla.
+* `micancion.play()`, `micancion.stop()` → reproducción y detención del audio.
+* Cambio de `estado` (`pantallaOpresion`, `pantallaInicio`, `pantallaLiberacion`) → cambio visual entre pantallas.
 
 #### Cómo se procesan y transforman?
-Las figuras se desplazan según sus velocidades horizontal y vertical, cuando llegan a los bordes del lienzo, rebotan cambiando la dirección de su movimiento, se calcula la distancia entre cada figura y el símbolo masculino, si una figura se encuentra a menos de 200 píxeles del símbolo, se aleja de él y además presenta un pequeño temblor aleatorio, cuando se presiona el mouse, la variable opresion cambia a true, desaparece el símbolo masculino y se muestra una imagen de fondo. Cuando se suelta el mouse, opresion vuelve a false, reaparece el símbolo masculino y las figuras vuelven a reaccionar ante él. El color de las figuras también cambia según el estado de opresión: son grises cuando el símbolo masculino está presente y recuperan sus colores cuando desaparece.
-
-#### Qué respuesta visual producen? (OUTPUT)
-*  Las figuras se desplazan según sus velocidades horizontal y vertical. 
-*  Cuando llegan a los bordes del lienzo, rebotan cambiando la dirección de su movimiento.
-*  Se calcula la distancia entre cada figura y el símbolo masculino.
-*  Si una figura se encuentra a menos de 200 píxeles del símbolo, se aleja de él y además presenta un pequeño temblor aleatorio.
-*  Cuando se presiona el mouse, la variable opresion cambia a true, desaparece el símbolo masculino y se muestra una imagen de fondo.
-*  Cuando se suelta el mouse, opresion vuelve a false, reaparece el símbolo masculino y las figuras vuelven a reaccionar ante él.
-*  El color de las figuras también cambia según el estado de opresión: son grises cuando el símbolo masculino está presente y recuperan sus colores cuando desaparece.
+Las entradas se procesan mediante funciones y condiciones del programa, el movimiento del mouse (`mouseX`, `mouseY`) se transforma en la posición del símbolo masculino y en la reacción de las figuras, que cambian su trayectoria cuando el cursor se acerca; las teclas (`ENTER` y espacio) son interpretadas por `keyPressed()` para modificar el valor de `estado`, cambiar pantallas y controlar la música; el tamaño de la ventana se procesa con `windowResized()` para reajustar el canvas; los archivos cargados (`imágenes`, `fuente`, `audio`) se utilizan como recursos visuales y sonoros; y los valores aleatorios (`random()`) se transforman en atributos de las figuras como tamaño, posición, velocidad, color y forma. Todo este procesamiento genera las salidas visuales y sonoras que aparecen en pantalla.
 
 #### Pensamiento computacional
-Reglas que gobiernan el sistema (inputs, procesos, outputs)
+El pensamiento computacional del proyecto se observa en la descomposición, al dividir el programa en funciones y estados (pantallaOpresion, pantallaInicio, pantallaLiberacion); en el reconocimiento de patrones, al reutilizar comportamientos similares para todas las figuras mediante la clase Figura; en la abstracción, al representar distintos objetos con atributos comunes como posición, tamaño, velocidad y color; y en el diseño de algoritmos, al establecer instrucciones paso a paso para mover, rebotar, reaccionar al mouse, cambiar estados y controlar la música.
+
 #### Explicación del sistema de interactividad
-La interactividad de este proyecto se basa en el uso del mouse como elemento de control. El usuario puede mover el cursor por la pantalla, haciendo que el símbolo masculino siga su posición. Este símbolo funciona como un agente de opresión, ya que las figuras que representan lo no hombre reaccionan a su cercanía alejándose de él.
-
-El sistema responde a la acción de presionar y soltar el mouse. Cuando el usuario presiona el botón del mouse, la variable opresion cambia de estado, provocando que el símbolo masculino desaparezca, que el fondo se transforme en una imagen de una flor que florece y que las figuras recuperen sus colores vibrantes. Al soltar el mouse, el estado vuelve a la normalidad: reaparece el símbolo masculino, el fondo vuelve a ser gris y las figuras se muestran nuevamente en tonos grises mientras continúan reaccionando a la presencia del símbolo.
-
-De esta manera, la interacción permite que el usuario altere directamente el comportamiento visual de la composición, generando un contraste entre dos estados: uno asociado a la opresión y otro asociado a la liberación. El movimiento del cursor y el clic del mouse son los mecanismos que activan estos cambios y construyen el significado de la obra.
+La interactividad ocurre mediante el uso del mouse y el teclado, el cursor controla la posición del símbolo masculino y modifica el comportamiento de las figuras cercanas, mientras que las teclas Enter o espacio permiten cambiar entre las distintas pantallas y activar o detener la música. El programa procesa continuamente estas entradas y genera respuestas visuales y sonoras en tiempo real, creando una relación dinámica entre las acciones del usuario y lo que sucede en la pantalla. El sistema responde a la acción de presionar y soltar el mouse. Cuando el usuario presiona el botón del mouse, la variable opresion cambia de estado, provocando que el símbolo masculino desaparezca, que el fondo se transforme en una imagen de una flor en apertura y que las figuras recuperen sus colores vibrantes. 
+Al soltar el mouse, el estado vuelve a la normalidad, o más bien realidad. Reaparece el símbolo masculino, el fondo vuelve a ser gris y las figuras se muestran nuevamente en tonos grises mientras continúan reaccionando a la presencia del símbolo. De esta manera, la interacción permite que el usuario altere directamente el comportamiento visual de la composición, generando un contraste entre dos estados, uno asociado a la opresión y otro asociado a la liberación. El movimiento del cursor y el clic del mouse son los mecanismos que activan estos cambios y construyen el significado de la obra.
 
 #### Referentes
-Listado y breve descripción de referentes visuales, teóricos o históricos.
-• Diagrama de Flujo: (En el documento) 
+Creado por nosotros mismos, de cómo representamos personalmente la vivencia de la supremacía del hombre hetero cis.
+
+• Diagrama de Flujo: 
 
 • Código de p5.js (Agregado en formato MarkDown): 
 ```javascript
-// almacena todas las figuras que representan lo no hombre
+let estado = 0;
+
+let fuente;
+let simbolomasculino;
+let fondo;
+let micancion;
+
+// ARRAY
 let noHombres = [];
 
-// Variable que indica si existe o no opresión
-let opresion = false;
+// ------------------ CLASS ------------------
 
-// Variable para guardar la imagen del símbolo masculino
-let simbolomasculino;
+class Figura {
 
-// Variables auxiliares utilizadas en los ciclos y cálculos
-let i;
-let s;
-let d;
+  constructor() {
 
-// Variable para guardar la imagen de fondo cuando el mouse es presionado
-let fondo;
+    this.x = random(width);
+    this.y = random(height);
 
-// Carga las imágenes antes de iniciar el programa
-function preload() {
-  simbolomasculino = loadImage("simbolo masculino.png");
-  fondo = loadImage("fondo.jpeg");
+    this.size = random(width * 0.02, width * 0.06);
+
+    this.vx = random(-width * 0.002, width * 0.002);
+    this.vy = random(-height * 0.002, height * 0.002);
+
+    this.type = random([
+      "ellipse",
+      "rect",
+      "triangle",
+      "line"
+    ]);
+
+    this.col = color(
+      random(255),
+      random(255),
+      random(255)
+    );
+  }
+
+  mover() {
+
+    this.x += this.vx;
+    this.y += this.vy;
+
+  }
+
+  rebotar() {
+
+    if (this.x < 0 || this.x > width) {
+      this.vx *= -1;
+    }
+
+    if (this.y < 0 || this.y > height) {
+      this.vy *= -1;
+    }
+
+  }
+
 }
+
+// ------------------ PRELOAD ------------------
+
+function preload() {
+
+  simbolomasculino = loadImage("simbolo masculino.png");
+
+  fondo = loadImage("fondo.jpeg");
+
+  fuente = loadFont("fuente/Noto.ttf");
+
+  micancion = loadSound("cancion/ladygaga.mp3");
+
+}
+
+// ------------------ SETUP ------------------
 
 function setup() {
 
-  // Crea un lienzo de 800 x 600 píxeles
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
 
-  // Crea 200 figuras aleatorias
-  for (i = 0; i < 200; i++) {
+  textFont(fuente);
 
-    // Agrega cada figura al arreglo
-    noHombres.push({
+  // Se crean las 200 figuras usando la clase
 
-      // Posición inicial aleatoria
-      x: random(width),
-      y: random(height),
+  for (let i = 0; i < 200; i++) {
 
-      // Tamaño aleatorio
-      size: random(20, 60),
+    noHombres.push(new Figura());
 
-      // Velocidad horizontal aleatoria
-      vx: random(-2, 2),
-
-      // Velocidad vertical aleatoria
-      vy: random(-2, 2),
-
-      // Tipos de figuras
-      type: random(["ellipse", "rect", "triangle", "line"]),
-
-      // Color aleatorio
-      col: color(random(255), random(255), random(255)),
-    });
   }
+
 }
+
+// ------------------ DRAW ------------------
 
 function draw() {
 
-  // Si existe opresión aparece una imagen de fondo
-  if (opresion) {
-    image(fondo, 0, 0, width, height);
+  switch (estado) {
+
+    case 0:
+      pantallaOpresion();
+      break;
+
+    case 1:
+      pantallaInicio();
+      break;
+
+    case 2:
+      pantallaLiberacion();
+      break;
+
   }
 
-  // Si no existe opresión aparece un fondo gris
-  else {
-    background(220);
-  }
+}
+// ------------------ ESTADO 0 ------------------
 
-  // Configuración del texto
-  fill(0);
-  textSize(18);
-  textAlign(LEFT, TOP);
+function pantallaOpresion() {
 
-  // Muestra la frase en pantalla
-  text(
-    "Soy una hormiguita que busca bajo la tierra donde poder refugiar su corazón - Violeta Parra.",
-    150,
-    10,
-    290
+  background(209, 192, 178);
+
+  let tamSimbolo = width * 0.12;
+
+  image(
+    simbolomasculino,
+    mouseX,
+    mouseY,
+    tamSimbolo,
+    tamSimbolo
   );
 
-  // Si no hay opresión se muestra el símbolo masculino siguiendo al mouse
-  if (!opresion) {
-    image(simbolomasculino, mouseX, mouseY, 200, 200);
-  }
+  // Figuras
+  for (let s of noHombres) {
 
-  // Recorre todas las figuras del arreglo
-  for (s of noHombres) {
+    // Ahora usamos los métodos de la clase
+    s.mover();
+    s.rebotar();
 
-    // Actualiza la posición según su velocidad
-    s.x += s.vx;
-    s.y += s.vy;
+    let d = dist(
+      s.x,
+      s.y,
+      mouseX,
+      mouseY
+    );
 
-    // Rebota en los bordes izquierdo y derecho
-    if (s.x < 0 || s.x > width) {
-      s.vx *= -1;
-    }
+    if (d < width * 0.12) {
 
-    // Rebota en los bordes superior e inferior
-    if (s.y < 0 || s.y > height) {
-      s.vy *= -1;
-    }
-
-    // Reacción de las figuras frente al símbolo masculino
-    if (!opresion) {
-
-      // Calcula la distancia entre la figura y el mouse
-      d = dist(s.x, s.y, mouseX, mouseY);
-
-      // Si la figura está cerca del símbolo
-      if (d < 200) {
-
-        // Se mueve alejándose horizontalmente
-        if (s.x < mouseX) {
-          s.x -= 3;
-        } else {
-          s.x += 3;
-        }
-
-        // Se mueve alejándose verticalmente
-        if (s.y < mouseY) {
-          s.y -= 3;
-        } else {
-          s.y += 3;
-        }
-
-        // Agrega un pequeño temblor al movimiento
-        s.x += random(-2, 2);
-        s.y += random(-2, 2);
+      if (s.x < mouseX) {
+        s.x -= 3;
+      } else {
+        s.x += 3;
       }
+
+      if (s.y < mouseY) {
+        s.y -= 3;
+      } else {
+        s.y += 3;
+      }
+
+      s.x += random(-2, 2);
+      s.y += random(-2, 2);
+
     }
 
-    // Si no hay opresión las figuras recuperan su color
-    if (!opresion) {
-      fill(120);
-    }
+    dibujarFigura(s, color(120));
 
-    // Si hay opresión las figuras se vuelven grises
-    else {
-      fill(s.col);
-    }
-
-    // Quita el borde de las figuras
-    noStroke();
-
-    // Dibuja una elipse
-    if (s.type === "ellipse") {
-      ellipse(s.x, s.y, s.size);
-    }
-
-    // Dibuja un rectángulo
-    else if (s.type === "rect") {
-      rectMode(CENTER);
-      rect(s.x, s.y, s.size, s.size);
-    }
-
-    // Dibuja un triángulo
-    else if (s.type === "triangle") {
-      triangle(
-        s.x,
-        s.y - s.size / 2,
-        s.x - s.size / 2,
-        s.y + s.size / 2,
-        s.x + s.size / 2,
-        s.y + s.size / 2
-      );
-    }
-
-    // Dibuja una X utilizando dos líneas
-    else if (s.type === "line") {
-
-      // Color de las líneas
-      stroke(opresion ? s.col : 120);
-
-      // Grosor de las líneas
-      strokeWeight(3);
-
-      // Primera diagonal
-      line(
-        s.x - s.size / 2,
-        s.y - s.size / 2,
-        s.x + s.size / 2,
-        s.y + s.size / 2
-      );
-
-      // Segunda diagonal
-      line(
-        s.x + s.size / 2,
-        s.y - s.size / 2,
-        s.x - s.size / 2,
-        s.y + s.size / 2
-      );
-
-      // Elimina el borde
-      noStroke();
-    }
   }
+
+  // Texto
+
+  fill(0);
+  noStroke();
+
+  textAlign(LEFT, TOP);
+
+  textSize(width * 0.025);
+
+  text(
+    "Presiona ENTER para continuar.",
+    width * 0.30,
+    height * 0.10,
+    width * 0.50
+  );
+
 }
 
-// Cuando se presiona el mouse desaparece el estado de opresión
-function mousePressed() {
-  opresion = true;
+// ------------------ ESTADO 1 ------------------
+
+function pantallaInicio() {
+
+  background(255, 250, 201);
+
+  fill(0);
+
+  textAlign(CENTER, CENTER);
+
+  textSize(width * 0.035);
+
+  text(
+
+    "Soy una hormiguita que busca bajo la tierra\n donde poder refugiar su corazón.",
+
+    width / 2,
+
+    height / 2 - 60
+
+  );
+
+  textSize(width * 0.03);
+
+  text(
+
+    "- Violeta Parra -\n\nPresiona ENTER para continuar",
+
+    width / 2,
+
+    height / 2 + 60
+
+  );
+
+}
+// ------------------ ESTADO 2 ------------------
+
+function pantallaLiberacion() {
+
+  image(fondo, 0, 0, width, height);
+
+  for (let s of noHombres) {
+
+    // Métodos de la clase
+    s.mover();
+    s.rebotar();
+
+    dibujarFigura(s, s.col);
+
+  }
+
 }
 
-// Cuando se suelta el mouse aparece el estado de opresión
-function mouseReleased() {
-  opresion = false;
+// ------------------ DIBUJO DE FIGURAS ------------------
+
+function dibujarFigura(s, c) {
+
+  fill(c);
+  noStroke();
+
+  if (s.type === "ellipse") {
+
+    ellipse(
+      s.x,
+      s.y,
+      s.size
+    );
+
+  }
+
+  else if (s.type === "rect") {
+
+    rectMode(CENTER);
+
+    rect(
+      s.x,
+      s.y,
+      s.size,
+      s.size
+    );
+
+  }
+
+  else if (s.type === "triangle") {
+
+    triangle(
+
+      s.x,
+      s.y - s.size / 2,
+
+      s.x - s.size / 2,
+      s.y + s.size / 2,
+
+      s.x + s.size / 2,
+      s.y + s.size / 2
+
+    );
+
+  }
+
+  else if (s.type === "line") {
+
+    stroke(c);
+
+    strokeWeight(
+      max(2, width * 0.002)
+    );
+
+    line(
+      s.x - s.size / 2,
+      s.y - s.size / 2,
+      s.x + s.size / 2,
+      s.y + s.size / 2
+    );
+
+    line(
+      s.x + s.size / 2,
+      s.y - s.size / 2,
+      s.x - s.size / 2,
+      s.y + s.size / 2
+    );
+
+  }
+
+}
+
+// ------------------ CAMBIO DE ESTADOS ------------------
+
+function keyPressed() {
+
+  if (key === " " || keyCode === ENTER) {
+
+    let estadoAnterior = estado;
+
+    estado++;
+
+    if (estado > 2) {
+      estado = 0;
+    }
+
+    // Reproduce la música solo al pasar
+    // del estado 1 al estado 2
+
+    if (
+      estadoAnterior === 1 &&
+      estado === 2
+    ) {
+
+      if (!micancion.isPlaying()) {
+        micancion.play();
+      }
+
+    }
+
+    // Detiene la música
+    // cuando vuelve al inicio
+
+    if (
+      estado === 0 &&
+      micancion.isPlaying()
+    ) {
+
+      micancion.stop();
+
+    }
+
+  }
+
+}
+
+// ------------------ RESPONSIVE ------------------
+
+function windowResized() {
+
+  resizeCanvas(
+    windowWidth,
+    windowHeight
+  );
+
 }
 ```
 
