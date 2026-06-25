@@ -22,7 +22,6 @@ Nuestra idea central del proyecto es demostrar la realidad actual y no actual, d
 
 #### Input / Output y sistema
 * **Inputs:**
-
 * `mouseX`, `mouseY` → posición del mouse.
 * `keyPressed`, `key`, `keyCode`, `ENTER`, `" "` → entrada del teclado (Enter y barra espaciadora).
 * `windowWidth`, `windowHeight`, `windowResized()` → tamaño y cambios de la ventana.
@@ -30,7 +29,6 @@ Nuestra idea central del proyecto es demostrar la realidad actual y no actual, d
 * `random()` → generación de valores aleatorios para posición, tamaño, velocidad, color y tipo de figura.
 
 **Outputs:**
-
 * `ellipse()`, `rect()`, `triangle()`, `line()` → figuras dibujadas en pantalla.
 * `image()` → imágenes mostradas (símbolo masculino y fondo).
 * `text()` → texto e instrucciones en pantalla.
@@ -44,7 +42,7 @@ Las entradas se procesan mediante funciones y condiciones del programa, el movim
 El pensamiento computacional del proyecto se observa en la descomposición, al dividir el programa en funciones y estados (pantallaOpresion, pantallaInicio, pantallaLiberacion); en el reconocimiento de patrones, al reutilizar comportamientos similares para todas las figuras mediante la clase Figura; en la abstracción, al representar distintos objetos con atributos comunes como posición, tamaño, velocidad y color; y en el diseño de algoritmos, al establecer instrucciones paso a paso para mover, rebotar, reaccionar al mouse, cambiar estados y controlar la música.
 
 #### Explicación del sistema de interactividad
-La interactividad ocurre mediante el uso del mouse y el teclado, el cursor controla la posición del símbolo masculino y modifica el comportamiento de las figuras cercanas, mientras que las teclas Enter o espacio permiten cambiar entre las distintas pantallas y activar o detener la música. El programa procesa continuamente estas entradas y genera respuestas visuales y sonoras en tiempo real, creando una relación dinámica entre las acciones del usuario y lo que sucede en la pantalla. El sistema responde a la acción de presionar y soltar el mouse. Cuando el usuario presiona el botón del mouse, la variable opresion cambia de estado, provocando que el símbolo masculino desaparezca, que el fondo se transforme en una imagen de una flor en apertura y que las figuras recuperen sus colores vibrantes. 
+La interactividad ocurre mediante el uso del mouse y el teclado, el cursor controla la posición del símbolo masculino y modifica el comportamiento de las figuras cercanas, mientras que las teclas Enter o espacio permiten cambiar entre las distintas pantallas y activar o detener la música. El programa procesa continuamente estas entradas y genera respuestas visuales y sonoras en tiempo real, creando una relación dinámica entre las acciones del usuario y lo que sucede en la pantalla. El sistema responde a la acción de presionar y soltar el mouse. Cuando el usuario presiona el botón del mouse, la variable opresion cambia de estado, provocando que el símbolo masculino desaparezca, que el fondo se transforme en una imagen de un lirio floreciendo y que las figuras recuperen sus colores vibrantes. 
 Al soltar el mouse, el estado vuelve a la normalidad, o más bien realidad. Reaparece el símbolo masculino, el fondo vuelve a ser gris y las figuras se muestran nuevamente en tonos grises mientras continúan reaccionando a la presencia del símbolo. De esta manera, la interacción permite que el usuario altere directamente el comportamiento visual de la composición, generando un contraste entre dos estados, uno asociado a la opresión y otro asociado a la liberación. El movimiento del cursor y el clic del mouse son los mecanismos que activan estos cambios y construyen el significado de la obra.
 
 #### Referentes
