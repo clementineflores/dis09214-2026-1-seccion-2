@@ -48,12 +48,11 @@ Al soltar el mouse, el estado vuelve a la normalidad, o más bien realidad. Reap
 #### Referentes
 Creado por nosotros mismos, de cómo representamos personalmente la vivencia de la supremacía del hombre hetero cis.
 
-• Diagrama de Flujo: 
+• Diagrama de Flujo:(https://www.figma.com/board/OoJAkrm6cjxKRoBtvQ6ZPb/Diagramas-de-Flujo--Community-?node-id=0-1&t=YTL8jEb42tSsqS0T-1)
 
 • Código de p5.js (Agregado en formato MarkDown): 
 ```javascript
 let estado = 0;
-
 let fuente;
 let simbolomasculino;
 let fondo;
@@ -62,8 +61,7 @@ let micancion;
 // ARRAY
 let noHombres = [];
 
-// ------------------ CLASS ------------------
-
+//  CLASS 
 class Figura {
 
   constructor() {
@@ -71,34 +69,23 @@ class Figura {
     this.x = random(width);
     this.y = random(height);
 
-    this.size = random(width * 0.02, width * 0.06);
+    this.size = random(width * 0.04, width * 0.09);
 
     this.vx = random(-width * 0.002, width * 0.002);
     this.vy = random(-height * 0.002, height * 0.002);
 
-    this.type = random([
-      "ellipse",
-      "rect",
-      "triangle",
-      "line"
-    ]);
+    this.type = random(["ellipse","rect","triangle","line"]);
 
-    this.col = color(
-      random(255),
-      random(255),
-      random(255)
-    );
+    this.col = color(random(255),random(255),random(255));
   }
 
   mover() {
-
     this.x += this.vx;
     this.y += this.vy;
 
   }
 
   rebotar() {
-
     if (this.x < 0 || this.x > width) {
       this.vx *= -1;
     }
@@ -111,7 +98,6 @@ class Figura {
 
 }
 
-// ------------------ PRELOAD ------------------
 
 function preload() {
 
@@ -121,11 +107,9 @@ function preload() {
 
   fuente = loadFont("fuente/Noto.ttf");
 
-  micancion = loadSound("cancion/ladygaga.mp3");
+  micancion = loadSound("cancion/andromeda.mp3");
 
 }
-
-// ------------------ SETUP ------------------
 
 function setup() {
 
@@ -143,7 +127,6 @@ function setup() {
 
 }
 
-// ------------------ DRAW ------------------
 
 function draw() {
 
@@ -164,21 +147,28 @@ function draw() {
   }
 
 }
-// ------------------ ESTADO 0 ------------------
+// ESTADO 0
 
 function pantallaOpresion() {
 
   background(209, 192, 178);
 
-  let tamSimbolo = width * 0.12;
+ let tamSimbolo = width * 0.30;
 
-  image(
-    simbolomasculino,
-    mouseX,
-    mouseY,
-    tamSimbolo,
-    tamSimbolo
-  );
+// El mouse queda en el centro del símbolo
+imageMode(CENTER);
+
+image(
+  simbolomasculino,
+  mouseX,
+  mouseY,
+  tamSimbolo,
+  tamSimbolo
+);
+
+// Volver al modo normal para el resto del sketch
+imageMode(CORNER);
+  
 
   // Figuras
   for (let s of noHombres) {
@@ -194,26 +184,26 @@ function pantallaOpresion() {
       mouseY
     );
 
-    if (d < width * 0.12) {
+    if (d < width * 0.25) {
 
       if (s.x < mouseX) {
-        s.x -= 3;
+        s.x -= 5;
       } else {
-        s.x += 3;
+        s.x += 5;
       }
 
       if (s.y < mouseY) {
-        s.y -= 3;
+        s.y -= 10;
       } else {
-        s.y += 3;
+        s.y += 10;
       }
 
-      s.x += random(-2, 2);
-      s.y += random(-2, 2);
+      s.x += random(-4, 4);
+      s.y += random(-4, 4);
 
     }
 
-    dibujarFigura(s, color(120));
+    dibujarFigura(s, color(100));
 
   }
 
@@ -227,7 +217,7 @@ function pantallaOpresion() {
   textSize(width * 0.025);
 
   text(
-    "Presiona ENTER para continuar.",
+    "Presiona ENTER para salir de esta realidad.",
     width * 0.30,
     height * 0.10,
     width * 0.50
@@ -235,7 +225,7 @@ function pantallaOpresion() {
 
 }
 
-// ------------------ ESTADO 1 ------------------
+// ESTADO 1
 
 function pantallaInicio() {
 
@@ -270,7 +260,7 @@ function pantallaInicio() {
   );
 
 }
-// ------------------ ESTADO 2 ------------------
+// ESTADO 2
 
 function pantallaLiberacion() {
 
@@ -288,7 +278,7 @@ function pantallaLiberacion() {
 
 }
 
-// ------------------ DIBUJO DE FIGURAS ------------------
+// DIBUJO DE FIGURAS 
 
 function dibujarFigura(s, c) {
 
@@ -361,7 +351,7 @@ function dibujarFigura(s, c) {
 
 }
 
-// ------------------ CAMBIO DE ESTADOS ------------------
+// CAMBIO DE ESTADOS
 
 function keyPressed() {
 
@@ -375,13 +365,9 @@ function keyPressed() {
       estado = 0;
     }
 
-    // Reproduce la música solo al pasar
-    // del estado 1 al estado 2
+    // Reproduce la música solo al pasar del estado 1 al estado 2
 
-    if (
-      estadoAnterior === 1 &&
-      estado === 2
-    ) {
+    if (estadoAnterior === 1 && estado === 2) {
 
       if (!micancion.isPlaying()) {
         micancion.play();
@@ -389,14 +375,10 @@ function keyPressed() {
 
     }
 
-    // Detiene la música
-    // cuando vuelve al inicio
+    // Detiene la música cuando vuelve al inicio
 
-    if (
-      estado === 0 &&
-      micancion.isPlaying()
-    ) {
-
+    if (estado === 0 && micancion.isPlaying()) {
+ 
       micancion.stop();
 
     }
@@ -405,7 +387,7 @@ function keyPressed() {
 
 }
 
-// ------------------ RESPONSIVE ------------------
+// 
 
 function windowResized() {
 
@@ -414,6 +396,7 @@ function windowResized() {
     windowHeight
   );
 
+}
 }
 ```
 
