@@ -9,7 +9,7 @@ Nuestro proyecto habla de la supremacía del hombre cis-hetero sobre las persona
 
 #### ¿Qué se ve en pantalla?
 En la pantalla se despliega una dualidad —o más bien, una transición— entre dos realidades que han coexistido siempre, la del hombre hetero cis y la de las personas no hombres. El primer estado aparece apagado, frío, plano. Es el punto de partida. Al presionar ENTER, algo se rompe y se transforma en un trance, un umbral. Lo que emerge es una frase que Violeta Parra pronunció en una entrevista: "Soy una hormiguita que busca bajo la tierra dónde refugiar su corazón". Las personas no hombres somos esas hormiguitas —pequeñas no por naturaleza, sino porque así se nos ha intentado hacer sentir, constantemente, por una cultura que nos reduce y nos estrecha—.
-Pero la hormiga también busca. Y esa búsqueda —bajo la tierra, dónde refugiar su corazón— habla de el impulso de encontrar refugio entre nosotrxs, entre otras personas no hombres, de ser entendidxs, escuchadxs y amadxs de una manera genuina y sin condiciones ni patriarcado de por medio, a lo que al presionar ENTER otra vez, se comienza a escuchar 
+Pero la hormiga también busca. Y esa búsqueda —bajo la tierra, dónde refugiar su corazón— habla de el impulso de encontrar refugio entre nosotrxs, entre otras personas no hombres, de ser entendidxs, escuchadxs y amadxs de una manera genuina y sin condiciones ni patriarcado de por medio, a lo que al presionar ENTER otra vez, se comienza a escuchar "Andromeda" de Weyes Blood, que es una canción que en común sentimos como esta transición a este mundo ideal y soñado.
 
 #### ¿Qué elementos visuales aparecen?
 *  Figuras geométricas representadas como las personas no hombres (mujeres, lesbianas, trans, no binaries, etc) y los hombres hetero cis.
@@ -18,7 +18,7 @@ Pero la hormiga también busca. Y esa búsqueda —bajo la tierra, dónde refugi
 *  Una imagen de un símbolo masculino y otra imagen de un lirio florecido.
 
 #### Descripción conceptual
-Nuestra idea central del proyecto es demostrar la realidad actual y no actual, de cómo las personas no hombres son oprimidas. Nuestra regla de oro en el proyecto funciona de esta manera: Mientras el mouse esté presionado, persiste la supremacía y opresión, pero al soltarlo, las personas no hombres pueden florecer libremente en este mundo ideal, o conviviendo con las mismas personas no hombres. La lógica con nuestra problemática se relaciona directamente en representación desde nosotras, como personas no hombres oprimidas por la supremacía diariamente, en cómo nosotras lo hemos vivido, y en que sabemos cómo puede ser vivenciarlo desde primera fuente. 
+Nuestra idea central del proyecto es demostrar la realidad actual y no actual, de cómo las personas no hombres son oprimidas. Mientras el mouse esté presionado, persiste la supremacía y opresión, pero al soltarlo, las personas no hombres pueden florecer libremente en este mundo ideal, o conviviendo con las mismas personas no hombres. La lógica con nuestra problemática se relaciona directamente en representación desde nosotras, como personas no hombres oprimidas por la supremacía diariamente, en cómo nosotras lo hemos vivido, y en que sabemos cómo puede ser vivenciarlo desde primera fuente.
 
 #### Input / Output y sistema
 * **Inputs:**
